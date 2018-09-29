@@ -1,0 +1,30 @@
+{
+    "version": "2,12",
+    "command": "g++",
+    "isShellCommand": true,
+    "suppressTaskName": true,
+    "tasks": [
+        {
+            "taskName": "Compilation",
+            "isBuildCommand": true,
+            "args": [
+                "-c",
+                "${workspaceRoot}\\main.cpp",
+                "-IC:\\SFML-2.4.0\\include"
+            ]
+        },
+        {
+            "taskName": "Liaison du fichier compilé aux bibliothèques SFML",
+            "args": [
+                "${workspaceRoot}\\main.o",
+                "-o",
+                "sfml-app.exe",
+                "-LC:\\SFML-2.4.0\\lib",
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-system"
+            ]
+        }
+    ],
+    "showOutput": "always"
+}
